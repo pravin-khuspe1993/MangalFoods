@@ -67,7 +67,7 @@
     </div>
     <div class="offcanvas-body">
       <nav aria-label="Mobile navigation">
-        <ul class="list-unstyled mb-0 mobile-nav-list reveal-stagger">
+        <ul class="list-unstyled mb-0 mobile-nav-list">
           <li class="mb-2"><a class="nav-link" href="index.html">Home</a></li>
           <li class="mb-2"><a class="nav-link" href="shop.html">Shop</a></li>
           <li class="mb-2"><a class="nav-link" href="sweets.html">Sweets</a></li>
@@ -91,7 +91,7 @@
         <p class="text-muted mb-3">Premium Indian sweets, savouries, and gifting experiences crafted for celebration.</p>
         <p class="mb-1"><a href="tel:${config.phoneRaw || "9594928299"}">${config.phoneDisplay || "+91 95949 28299"}</a></p>
         <p class="mb-1"><a href="mailto:${config.email || "hello@mangalfoods.in"}">${config.email || "hello@mangalfoods.in"}</a></p>
-        <p class="text-muted mb-0">${config.address || "Bandra West, Mumbai, Maharashtra 400050"}</p>
+        <p class="text-muted mb-0">${config.address || "Nerul West, Navi Mumbai, Maharashtra 400706"}</p>
       </div>
       <div class="col-sm-6 col-lg-4">
         <h2 class="h6 text-uppercase mb-3">Quick Links</h2>
@@ -148,16 +148,51 @@
   const markActiveLink = () => {
     const page = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     document.querySelectorAll("a.nav-link").forEach((link) => {
-      const href = (link.getAttribute("href") || "").toLowerCase();
-      if (!href || href.startsWith("#")) {
+      const rawHref = link.getAttribute("href") || "";
+      if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("http")) {
         return;
       }
 
+      const href = rawHref.split("?")[0].split("#")[0].toLowerCase();
       if (href === page || (page === "" && href === "index.html")) {
         link.classList.add("active");
         link.setAttribute("aria-current", "page");
       }
     });
+  };
+
+  const forceMobileNavVisible = () => {
+    const nav = document.getElementById("mobileNav");
+    if (!nav) {
+      return;
+    }
+
+    nav.querySelectorAll(".mobile-nav-list > li, .mobile-nav-list .nav-link").forEach((el) => {
+      if (!(el instanceof HTMLElement)) {
+        return;
+      }
+
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      el.style.visibility = "visible";
+      el.style.display = el.classList.contains("nav-link") ? "block" : "list-item";
+    });
+  };
+
+  const bindMobileNavDefensiveVisibility = () => {
+    const nav = document.getElementById("mobileNav");
+    if (!nav) {
+      return;
+    }
+
+    const apply = () => {
+      forceMobileNavVisible();
+      window.setTimeout(forceMobileNavVisible, 40);
+      window.setTimeout(forceMobileNavVisible, 140);
+    };
+
+    nav.addEventListener("show.bs.offcanvas", apply);
+    nav.addEventListener("shown.bs.offcanvas", apply);
   };
 
   const initializeLayout = () => {
@@ -182,6 +217,8 @@
       el.textContent = String(new Date().getFullYear());
     });
 
+    forceMobileNavVisible();
+    bindMobileNavDefensiveVisibility();
     markActiveLink();
   };
 

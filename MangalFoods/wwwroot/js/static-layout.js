@@ -92,7 +92,7 @@
         <p class="text-muted mb-3">Premium Indian sweets, savouries, and gifting experiences crafted for celebration.</p>
         <p class="mb-1"><a href="tel:${config.phoneRaw || "9594928299"}">${config.phoneDisplay || "+91 95949 28299"}</a></p>
         <p class="mb-1"><a href="mailto:${config.email || "hello@mangalfoods.in"}">${config.email || "hello@mangalfoods.in"}</a></p>
-        <p class="text-muted mb-0">${config.address || "Bandra West, Mumbai, Maharashtra 400050"}</p>
+        <p class="text-muted mb-0">${config.address || "Nerul West, Navi Mumbai, Maharashtra 400706"}</p>
       </div>
       <div class="col-sm-6 col-lg-4">
         <h2 class="h6 text-uppercase mb-3">Quick Links</h2>

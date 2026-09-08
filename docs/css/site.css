@@ -613,7 +613,7 @@ body.menu-open {
 
 #mobileNav .offcanvas-body {
   opacity: 1;
-  transform: translateX(-10px);
+  transform: translateX(0);
   transition: transform 420ms var(--ease-luxury);
 }
 
@@ -622,22 +622,32 @@ body.menu-open {
   transform: translateX(0);
 }
 
+#mobileNav .mobile-nav-list {
+  display: block;
+  visibility: visible;
+}
+
 #mobileNav .mobile-nav-list > li {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 380ms var(--ease-luxury), transform 380ms var(--ease-luxury);
+  display: block;
+  visibility: visible;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none;
 }
 
 #mobileNav.show .mobile-nav-list > li,
 #mobileNav.showing .mobile-nav-list > li {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 #mobileNav .nav-link {
+  display: block;
+  visibility: visible;
   border-radius: 0.55rem;
   padding: 0.35rem 0.4rem;
-  opacity: 1;
+  opacity: 1 !important;
+  transform: none !important;
   transition: background-color var(--animation-fast) var(--ease-soft), transform var(--animation-fast) var(--ease-soft), color var(--animation-fast) var(--ease-soft);
 }
 

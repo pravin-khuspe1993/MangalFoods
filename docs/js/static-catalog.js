@@ -98,6 +98,37 @@
       </div>`;
   };
 
+  const revealRenderedContent = (scope) => {
+    if (!(scope instanceof HTMLElement)) {
+      return;
+    }
+
+    scope.querySelectorAll(".reveal, .reveal-stagger, .image-reveal").forEach((el) => {
+      el.classList.add("is-visible");
+    });
+  };
+
+  const bindImageFallbacks = (scope) => {
+    if (!(scope instanceof HTMLElement)) {
+      return;
+    }
+
+    scope.querySelectorAll("img").forEach((img) => {
+      if (!(img instanceof HTMLImageElement)) {
+        return;
+      }
+
+      img.addEventListener("error", () => {
+        if (img.dataset.fallbackApplied === "true") {
+          return;
+        }
+
+        img.dataset.fallbackApplied = "true";
+        img.src = "./images/products/placeholder-product.webp";
+      }, { once: true });
+    });
+  };
+
   const renderGrid = (root, products) => {
     if (!root) {
       return;
@@ -109,6 +140,8 @@
     }
 
     root.innerHTML = `<div class="row g-4">${products.map(toCardMarkup).join("")}</div>`;
+    revealRenderedContent(root);
+    bindImageFallbacks(root);
     window.mangalFoods?.bindAddToCartButtons?.();
   };
 
@@ -382,6 +415,8 @@
       </div>
     </section>`;
 
+    revealRenderedContent(root);
+    bindImageFallbacks(root);
     window.mangalFoods?.bindAddToCartButtons?.();
 
     document.dispatchEvent(new CustomEvent("mangalfoods:product-rendered"));

@@ -5,7 +5,7 @@
     phoneDisplay: "+91 95949 28299",
     phoneRaw: "9594928299",
     email: "hello@mangalfoods.in",
-    address: "Bandra West, Mumbai, Maharashtra 400050",
+    address: "Nerul West, Navi Mumbai, Maharashtra 400706",
     instagramUrl: "https://instagram.com/mangalfoods",
     facebookUrl: "https://facebook.com/mangalfoods",
     deliveryCharge: 80,
