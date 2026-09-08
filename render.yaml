@@ -1,8 +1,0 @@
-services:
-  - type: web
-    runtime: docker
-    name: mangal-foods
-    dockerfilePath: ./Dockerfile
-    plan: free
-    autoDeploy: true
-

@@ -14,17 +14,6 @@
   const fromPaise = (paise) => paise / 100;
   const formatInr = (paise) => `₹${inrFormatter.format(fromPaise(paise))}`;
 
-  const withBasePath = (target) => {
-    const basePath = document.body?.dataset?.siteBasePath || "";
-    const normalizedBase = basePath.replace(/\/+$/, "");
-    const normalizedTarget = (target || "").replace(/^\/+/, "");
-    if (!normalizedBase) {
-      return `./${normalizedTarget}`;
-    }
-
-    return `${normalizedBase}/${normalizedTarget}`;
-  };
-
   const readJson = (key, fallback) => {
     try {
       const raw = localStorage.getItem(key);
@@ -190,7 +179,7 @@
         ...item,
         productName: product?.name || `Product #${item.productId}`,
         productSlug: product?.slug || "",
-        productImage: product?.image || withBasePath("images/products/placeholder-product.webp"),
+        productImage: product?.image || "/images/products/placeholder-product.webp",
         unitPricePaise,
         lineSubtotalPaise
       };
@@ -429,5 +418,4 @@
   window.mangalFoods.getCatalog = getCatalog;
   window.mangalFoods.computeTotals = (cart, catalog) => computeTotals(cart, catalog);
   window.mangalFoods.formatInrPaise = formatInr;
-  window.mangalFoods.withBasePath = withBasePath;
 })();
