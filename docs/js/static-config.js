@@ -10,7 +10,7 @@
     facebookUrl: "https://facebook.com/mangalfoods",
     deliveryCharge: 80,
     freeDeliveryThreshold: 1000,
-    whatsappDryRun: true
+    whatsappDryRun: false
   };
 
   window.mangalFoodsConfig = config;
