@@ -14,6 +14,23 @@
   const fromPaise = (paise) => paise / 100;
   const formatInr = (paise) => `₹${inrFormatter.format(fromPaise(paise))}`;
 
+  const resolveAssetPath = (path) => {
+    const value = (path || "").toString().trim();
+    if (!value) {
+      return "./images/products/placeholder-product.webp";
+    }
+
+    if (value.startsWith("http://") || value.startsWith("https://")) {
+      return value;
+    }
+
+    if (value.startsWith("/")) {
+      return `.${value}`;
+    }
+
+    return value;
+  };
+
   const readJson = (key, fallback) => {
     try {
       const raw = localStorage.getItem(key);
@@ -59,7 +76,7 @@
       id: Number(item.id),
       name: item.name || "Product",
       slug: item.slug || "",
-      image: item.image || "/images/products/placeholder-product.webp",
+      image: resolveAssetPath(item.image || "./images/products/placeholder-product.webp"),
       pricePaise: toPaise(item.price || 0)
     };
 
@@ -179,7 +196,7 @@
         ...item,
         productName: product?.name || `Product #${item.productId}`,
         productSlug: product?.slug || "",
-        productImage: product?.image || "/images/products/placeholder-product.webp",
+        productImage: resolveAssetPath(product?.image || "./images/products/placeholder-product.webp"),
         unitPricePaise,
         lineSubtotalPaise
       };

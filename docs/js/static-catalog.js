@@ -21,6 +21,23 @@
 
   const parseBoolean = (value) => normalize(value) === "true";
 
+  const resolveAssetPath = (path) => {
+    const value = (path || "").toString().trim();
+    if (!value) {
+      return "./images/products/placeholder-product.webp";
+    }
+
+    if (value.startsWith("http://") || value.startsWith("https://")) {
+      return value;
+    }
+
+    if (value.startsWith("/")) {
+      return `.${value}`;
+    }
+
+    return value;
+  };
+
   const fetchProducts = async () => {
     const response = await fetch(dataPath, { cache: "no-store" });
     if (!response.ok) {
@@ -34,8 +51,8 @@
   const toCardMarkup = (product) => {
     const discount = getDiscountPercent(product.price, product.originalPrice);
     const primaryImage = Array.isArray(product.images) && product.images.length
-      ? product.images[0]
-      : "/images/products/placeholder-product.webp";
+      ? resolveAssetPath(product.images[0])
+      : "./images/products/placeholder-product.webp";
 
     const badge = product.isBestseller
       ? '<span class="badge text-bg-dark product-badge">Bestseller</span>'
@@ -302,8 +319,10 @@
       return;
     }
 
-    const primaryImage = product.images?.[0] || "/images/products/placeholder-product.webp";
-    const thumbs = (product.images || []).slice(1);
+    const primaryImage = product.images?.[0]
+      ? resolveAssetPath(product.images[0])
+      : "./images/products/placeholder-product.webp";
+    const thumbs = (product.images || []).slice(1).map((img) => resolveAssetPath(img));
     const discount = getDiscountPercent(product.price, product.originalPrice);
 
     root.innerHTML = `
