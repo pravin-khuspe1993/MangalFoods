@@ -1,0 +1,8 @@
+@{
+    var buttonId = ViewData["WhatsAppButtonId"]?.ToString() ?? "placeOrderWhatsApp";
+    var buttonText = ViewData["WhatsAppButtonText"]?.ToString() ?? "Place Order on WhatsApp";
+}
+
+<button type="button" id="@buttonId" class="btn btn-success w-100 js-place-order-whatsapp" aria-label="@buttonText">
+    <i class="bi bi-whatsapp me-1" aria-hidden="true"></i>@buttonText
+</button>

@@ -1,0 +1,36 @@
+@page "/contact"
+@model MangalFoods.Pages.ContactModel
+
+<section class="py-4 py-lg-5">
+    <div class="container-xl">
+        <h1 class="h2 mb-3">Contact Us</h1>
+        <p class="text-muted mb-4">For orders, gifting, and bulk inquiries, reach out and we’ll help curate your selection.</p>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="p-4 rounded-4 bg-white shadow-sm">
+                    <h2 class="h5">Get in touch</h2>
+                    <p class="mb-2"><strong>Phone:</strong> +91 95949 28299</p>
+                    <p class="mb-2"><strong>Email:</strong> hello@mangalfoods.in</p>
+                    <p class="mb-0"><strong>Address:</strong> Bandra West, Mumbai, Maharashtra 400050</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form class="p-4 rounded-4 bg-white shadow-sm" method="get" asp-page="/Contact">
+                    <div class="mb-3">
+                        <label for="contactName" class="form-label">Name</label>
+                        <input id="contactName" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactEmail" class="form-label">Email</label>
+                        <input id="contactEmail" type="email" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactMessage" class="form-label">Message</label>
+                        <textarea id="contactMessage" class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

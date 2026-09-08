@@ -1,0 +1,114 @@
+﻿@page "/"
+@model MangalFoods.Pages.IndexModel
+
+<partial name="Partials/_Hero" />
+
+<section class="py-4 py-lg-5 reveal reveal-up section-tier-1" aria-labelledby="featured-categories-heading">
+    <div class="container-xl">
+        <h2 id="featured-categories-heading" class="h3 mb-4">Featured Categories</h2>
+        <div class="row g-4 reveal-stagger">
+            <div class="col-12 col-md-6 col-lg-4">
+                <partial name="Partials/_CategoryCard" model='("Sweets", "Classic and contemporary handcrafted mithai.", "/images/categories/sweets.webp", "/sweets")' />
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <partial name="Partials/_CategoryCard" model='("Savouries", "Crisp Indian snacks for every tea-time.", "/images/categories/savouries.webp", "/savouries")' />
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <partial name="Partials/_CategoryCard" model='("Gift Hampers", "Curated gifting experiences.", "/images/categories/gifting.webp", "/gifting")' />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-4 reveal reveal-up section-tier-1" aria-labelledby="best-sellers-heading">
+    <div class="container-xl">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 id="best-sellers-heading" class="h3 mb-0">Best Sellers</h2>
+            <a asp-page="/Shop" class="btn btn-outline-dark btn-sm">View all</a>
+        </div>
+        <partial name="Partials/_ProductGrid" model="Model.Bestsellers" />
+    </div>
+</section>
+
+@* <section class="py-4 reveal reveal-up section-tier-2" aria-labelledby="premium-sweets-heading">
+    <div class="container-xl">
+        <h2 id="premium-sweets-heading" class="h3 mb-3">Premium Sweets</h2>
+        <partial name="Partials/_ProductGrid" model="Model.PremiumSweets" />
+    </div>
+</section> *@
+
+<section class="py-4 reveal reveal-up section-tier-2" aria-labelledby="laddoos-heading">
+    <div class="container-xl">
+        <h2 id="laddoos-heading" class="h3 mb-3">Laddoos Collection</h2>
+        <p class="text-muted mb-3">Handpicked ladoo varieties from your uploaded collection.</p>
+        <partial name="Partials/_ProductGrid" model="Model.Laddoos" />
+    </div>
+</section>
+
+<section class="py-4 reveal reveal-up section-tier-2" aria-labelledby="savouries-heading">
+    <div class="container-xl">
+        <h2 id="savouries-heading" class="h3 mb-3">Savouries</h2>
+        <partial name="Partials/_ProductGrid" model="Model.Savouries" />
+    </div>
+</section>
+
+<section class="py-4 reveal reveal-up section-tier-2" aria-labelledby="gifting-heading">
+    <div class="container-xl">
+        <h2 id="gifting-heading" class="h3 mb-3">Gifting</h2>
+        <partial name="Partials/_ProductGrid" model="Model.Gifting" />
+    </div>
+</section>
+
+<section class="py-5 reveal reveal-up section-tier-3" aria-labelledby="brand-story-heading">
+    <div class="container-xl">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6 reveal reveal-left image-reveal">
+                <img src="/images/brand/brand-story.webp" class="img-fluid rounded-4 shadow-sm" alt="Brand story visual" loading="lazy" />
+            </div>
+            <div class="col-lg-6 reveal reveal-right" style="transition-delay: 140ms;">
+                <h2 id="brand-story-heading" class="h3">Brand Story</h2>
+                <p class="text-muted">Mangal Foods celebrates India’s culinary heritage through elevated sweets and savouries made with craftsmanship and care.</p>
+                <h3 class="h5 mt-4">Why choose us</h3>
+                <ul>
+                    <li>Premium ingredients and small-batch freshness</li>
+                    <li>Elegant gifting-first presentation</li>
+                    <li>Thoughtful festive and corporate curation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<partial name="Partials/_Testimonials" />
+
+<section class="py-4 reveal reveal-up section-tier-4" aria-labelledby="festive-heading">
+    <div class="container-xl">
+        <h2 id="festive-heading" class="h3 mb-3">Festive Collection</h2>
+        <partial name="Partials/_ProductGrid" model="Model.FestiveCollection" />
+    </div>
+</section>
+
+<section class="py-4 reveal reveal-up section-tier-4" aria-labelledby="corporate-heading">
+    <div class="container-xl">
+        <h2 id="corporate-heading" class="h3 mb-3">Corporate Gifting</h2>
+        <partial name="Partials/_ProductGrid" model="Model.CorporateGifting" />
+    </div>
+</section>
+
+<section class="py-5 reveal reveal-up section-tier-5" aria-labelledby="newsletter-heading">
+    <div class="container-xl">
+        <div class="p-4 p-lg-5 rounded-4 bg-white shadow-sm">
+            <h2 id="newsletter-heading" class="h3 mb-2">Join Our Newsletter</h2>
+            <p class="text-muted">Get festive launches, gift ideas, and seasonal specials.</p>
+            <form asp-page="/Contact" method="get" class="row g-2">
+                <div class="col-md-8">
+                    <label for="homeNewsletter" class="visually-hidden">Email address</label>
+                    <input id="homeNewsletter" type="email" class="form-control form-control-lg" placeholder="Enter your email" />
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-dark btn-lg w-100">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

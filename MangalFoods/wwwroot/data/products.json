@@ -1,0 +1,501 @@
+[
+  {
+    "id": 4,
+    "name": "Bhajani Chakali",
+    "slug": "bhajani-chakali",
+    "category": "Savouries",
+    "shortDescription": "Flaky tea-time savoury crackers.",
+    "description": "Crisp layered mathri seasoned with ajwain and black pepper.",
+    "price": 320,
+    "originalPrice": 380,
+    "images": [
+      "/images/products/actual/Bhajani Chakali.jpg"
+    ],
+    "variants": [
+      { "name": "200g", "price": 320 },
+      { "name": "400g", "price": 610 }
+    ],
+    "tags": ["snack", "tea-time"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.5,
+    "ingredients": "Wheat flour, ghee, carom seeds, spices",
+    "shelfLife": "30 days",
+    "storageInstructions": "Store airtight after opening.",
+    "vegetarian": true
+  },
+  {
+    "id": 5,
+    "name": "Chiwda Deluxe",
+    "slug": "chiwda-deluxe",
+    "category": "Savouries",
+    "shortDescription": "Light roasted poha mix with nuts.",
+    "description": "Aromatic roasted chiwda with curry leaves, peanuts, and raisins.",
+    "price": 280,
+    "originalPrice": 320,
+    "images": [
+      "/images/products/actual/Chivda.jpg"
+    ],
+    "variants": [
+      { "name": "180g", "price": 280 },
+      { "name": "360g", "price": 530 }
+    ],
+    "tags": ["roasted", "namkeen"],
+    "isFeatured": false,
+    "isBestseller": true,
+    "rating": 4.4,
+    "ingredients": "Flattened rice, peanuts, cashews, spices",
+    "shelfLife": "35 days",
+    "storageInstructions": "Store in an airtight jar.",
+    "vegetarian": true
+  },
+  {
+    "id": 6,
+    "name": "Bhadang Bhel",
+    "slug": "bhadang-bhel",
+    "category": "Savouries",
+    "shortDescription": "Roasted cashews with bold spice.",
+    "description": "Premium whole cashews roasted and tossed in signature peri peri seasoning.",
+    "price": 560,
+    "originalPrice": 620,
+    "images": [
+      "/images/products/actual/Bhadang Bhel.jpg"
+    ],
+    "variants": [
+      { "name": "150g", "price": 560 },
+      { "name": "300g", "price": 1080 }
+    ],
+    "tags": ["cashews", "spicy"],
+    "isFeatured": true,
+    "isBestseller": false,
+    "rating": 4.6,
+    "ingredients": "Cashews, olive oil, spice blend",
+    "shelfLife": "45 days",
+    "storageInstructions": "Store cool and dry.",
+    "vegetarian": true
+  },
+  {
+    "id": 7,
+    "name": "Heritage Celebration Hamper",
+    "slug": "heritage-celebration-hamper",
+    "category": "Gift Hampers",
+    "shortDescription": "Curated festive box with sweets and savouries.",
+    "description": "A premium gifting selection featuring mithai, namkeen, and artisanal cards.",
+    "price": 1499,
+    "originalPrice": 1799,
+    "images": [
+      "/images/products/heritage-celebration-hamper-1.webp"
+    ],
+    "variants": [
+      { "name": "Classic", "price": 1499 },
+      { "name": "Grande", "price": 2399 }
+    ],
+    "tags": ["gift", "festive", "curated"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.9,
+    "ingredients": "Assorted premium sweets and snacks",
+    "shelfLife": "Depends on selection",
+    "storageInstructions": "Refer individual pack labels.",
+    "vegetarian": true
+  },
+  {
+    "id": 8,
+    "name": "Wedding Return Favor Box",
+    "slug": "wedding-return-favor-box",
+    "category": "Gift Hampers",
+    "shortDescription": "Elegant compact gifting for celebrations.",
+    "description": "Beautifully packed return gift box with two sweets and one savoury selection.",
+    "price": 899,
+    "originalPrice": 999,
+    "images": [
+      "/images/products/wedding-return-favor-box-1.webp"
+    ],
+    "variants": [
+      { "name": "2 Item Box", "price": 899 },
+      { "name": "3 Item Box", "price": 1099 }
+    ],
+    "tags": ["wedding", "return gift"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.5,
+    "ingredients": "Assorted",
+    "shelfLife": "Depends on selection",
+    "storageInstructions": "Keep in dry area.",
+    "vegetarian": true
+  },
+  {
+    "id": 9,
+    "name": "Diwali Royal Assortment",
+    "slug": "diwali-royal-assortment",
+    "category": "Festive Collection",
+    "shortDescription": "Limited edition festive mithai collection.",
+    "description": "Seasonal festive selection designed for Diwali celebrations and gifting.",
+    "price": 1890,
+    "originalPrice": 2190,
+    "images": [
+      "/images/products/diwali-royal-assortment-1.webp"
+    ],
+    "variants": [
+      { "name": "Festival Box", "price": 1890 }
+    ],
+    "tags": ["diwali", "limited edition"],
+    "isFeatured": true,
+    "isBestseller": false,
+    "rating": 4.8,
+    "ingredients": "Assorted festive sweets",
+    "shelfLife": "10-20 days",
+    "storageInstructions": "Follow individual package instructions.",
+    "vegetarian": true
+  },
+  {
+    "id": 10,
+    "name": "Holi Treat Trunk",
+    "slug": "holi-treat-trunk",
+    "category": "Festive Collection",
+    "shortDescription": "Colorful festive hamper for Holi gifting.",
+    "description": "A joyful mix of crunchy and sweet treats curated for Holi celebrations.",
+    "price": 1299,
+    "originalPrice": 1499,
+    "images": [
+      "/images/products/holi-treat-trunk-1.webp"
+    ],
+    "variants": [
+      { "name": "Standard", "price": 1299 },
+      { "name": "Premium", "price": 1699 }
+    ],
+    "tags": ["holi", "festive"],
+    "isFeatured": false,
+    "isBestseller": true,
+    "rating": 4.7,
+    "ingredients": "Assorted sweets and snacks",
+    "shelfLife": "15-25 days",
+    "storageInstructions": "Store cool and dry.",
+    "vegetarian": true
+  },
+  {
+    "id": 11,
+    "name": "Executive Corporate Gift Box",
+    "slug": "executive-corporate-gift-box",
+    "category": "Corporate Gifting",
+    "shortDescription": "Premium corporate gifting with branding inserts.",
+    "description": "Elegant assortment designed for teams, clients, and festive corporate gifting.",
+    "price": 2199,
+    "originalPrice": 2499,
+    "images": [
+      "/images/products/executive-corporate-gift-box-1.webp"
+    ],
+    "variants": [
+      { "name": "Box of 12", "price": 2199 },
+      { "name": "Box of 18", "price": 2999 }
+    ],
+    "tags": ["corporate", "bulk order"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.9,
+    "ingredients": "Assorted premium sweets and nuts",
+    "shelfLife": "12-30 days",
+    "storageInstructions": "Refer product labels.",
+    "vegetarian": true
+  },
+  {
+    "id": 12,
+    "name": "Client Appreciation Tin",
+    "slug": "client-appreciation-tin",
+    "category": "Corporate Gifting",
+    "shortDescription": "Elegant tin curated for premium client gifting.",
+    "description": "A polished gifting tin with artisanal mithai and roasted savoury pairings.",
+    "price": 1699,
+    "originalPrice": 1899,
+    "images": [
+      "/images/products/client-appreciation-tin-1.webp"
+    ],
+    "variants": [
+      { "name": "Standard Tin", "price": 1699 },
+      { "name": "Deluxe Tin", "price": 2299 }
+    ],
+    "tags": ["corporate", "tin"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.6,
+    "ingredients": "Assorted",
+    "shelfLife": "15-25 days",
+    "storageInstructions": "Keep tightly sealed.",
+    "vegetarian": true
+  },
+  {
+    "id": 13,
+    "name": "Besan Ladoo",
+    "slug": "besan-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Classic roasted gram flour ladoos with rich aroma.",
+    "description": "Traditional Besan Ladoo with slow-roasted besan, ghee, and cardamom for a warm festive taste.",
+    "price": 480,
+    "originalPrice": 540,
+    "images": [
+      "/images/products/laddoos/Besan Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 480 },
+      { "name": "500g", "price": 920 }
+    ],
+    "tags": ["ladoo", "besan", "festive"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.7,
+    "ingredients": "Gram flour, ghee, sugar, cardamom",
+    "shelfLife": "15 days",
+    "storageInstructions": "Store in airtight container in a cool place.",
+    "vegetarian": true
+  },
+  {
+    "id": 14,
+    "name": "Boondi Ladoo",
+    "slug": "boondi-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Soft pearl-textured ladoos with saffron notes.",
+    "description": "A festive favorite made from fine boondi pearls bound with syrup and aromatic spices.",
+    "price": 520,
+    "originalPrice": 590,
+    "images": [
+      "/images/products/laddoos/Boondi Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 520 },
+      { "name": "500g", "price": 990 }
+    ],
+    "tags": ["ladoo", "boondi", "celebration"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.8,
+    "ingredients": "Gram flour pearls, sugar syrup, ghee",
+    "shelfLife": "12 days",
+    "storageInstructions": "Keep covered and avoid moisture.",
+    "vegetarian": true
+  },
+  {
+    "id": 15,
+    "name": "Dry Fruit Ladoo",
+    "slug": "dry-fruit-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Nut-rich ladoos with naturally sweet flavors.",
+    "description": "Premium ladoos blended with assorted nuts and dried fruits for wholesome indulgence.",
+    "price": 650,
+    "originalPrice": 720,
+    "images": [
+      "/images/products/laddoos/Dry Fruit Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 650 },
+      { "name": "500g", "price": 1240 }
+    ],
+    "tags": ["ladoo", "dry fruit", "premium"],
+    "isFeatured": true,
+    "isBestseller": false,
+    "rating": 4.9,
+    "ingredients": "Almonds, cashews, dates, raisins, ghee",
+    "shelfLife": "20 days",
+    "storageInstructions": "Store in a cool, dry airtight jar.",
+    "vegetarian": true
+  },
+  {
+    "id": 16,
+    "name": "Dink Ladoo",
+    "slug": "dink-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Traditional edible gum ladoos with rich nourishment.",
+    "description": "Authentic Maharashtrian style Dink Ladoo made with edible gum, nuts, and jaggery sweetness.",
+    "price": 560,
+    "originalPrice": 630,
+    "images": [
+      "/images/products/laddoos/Dink Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 560 },
+      { "name": "500g", "price": 1060 }
+    ],
+    "tags": ["ladoo", "traditional", "maharashtrian"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.6,
+    "ingredients": "Edible gum, jaggery, ghee, nuts",
+    "shelfLife": "18 days",
+    "storageInstructions": "Keep airtight and consume fresh.",
+    "vegetarian": true
+  },
+  {
+    "id": 17,
+    "name": "Javas Ladoo",
+    "slug": "javas-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Flaxseed ladoos with nutty and roasted notes.",
+    "description": "Healthy-style ladoos made with roasted flaxseed, jaggery, and ghee for everyday energy.",
+    "price": 500,
+    "originalPrice": 560,
+    "images": [
+      "/images/products/laddoos/Javas Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 500 },
+      { "name": "500g", "price": 950 }
+    ],
+    "tags": ["ladoo", "flaxseed", "healthy"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.5,
+    "ingredients": "Flaxseed, jaggery, ghee, dry coconut",
+    "shelfLife": "20 days",
+    "storageInstructions": "Store in a cool dry container.",
+    "vegetarian": true
+  },
+  {
+    "id": 18,
+    "name": "Moong Ladoo",
+    "slug": "moong-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Golden moong flour ladoos with rich ghee flavor.",
+    "description": "A soft-textured ladoo prepared from roasted moong flour and aromatic cardamom.",
+    "price": 530,
+    "originalPrice": 590,
+    "images": [
+      "/images/products/laddoos/Moong Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 530 },
+      { "name": "500g", "price": 1010 }
+    ],
+    "tags": ["ladoo", "moong", "traditional"],
+    "isFeatured": false,
+    "isBestseller": true,
+    "rating": 4.7,
+    "ingredients": "Moong flour, ghee, sugar, cardamom",
+    "shelfLife": "14 days",
+    "storageInstructions": "Keep sealed and away from direct heat.",
+    "vegetarian": true
+  },
+  {
+    "id": 19,
+    "name": "Rava Ladoo",
+    "slug": "rava-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Semolina ladoos with coconut and cardamom.",
+    "description": "Classic Rava Ladoo with roasted semolina, desiccated coconut, and festive sweetness.",
+    "price": 470,
+    "originalPrice": 530,
+    "images": [
+      "/images/products/laddoos/Rava Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 470 },
+      { "name": "500g", "price": 900 }
+    ],
+    "tags": ["ladoo", "rava", "coconut"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.8,
+    "ingredients": "Semolina, sugar, ghee, coconut, cardamom",
+    "shelfLife": "16 days",
+    "storageInstructions": "Store airtight in cool conditions.",
+    "vegetarian": true
+  },
+  {
+    "id": 20,
+    "name": "Methi Ladoo",
+    "slug": "methi-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Wholesome fenugreek ladoos with a warm roasted profile.",
+    "description": "Traditional Methi Ladoo made with fenugreek, jaggery, and ghee for a rich homemade flavor.",
+    "price": 540,
+    "originalPrice": 610,
+    "images": [
+      "/images/products/laddoos/Methi Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 540 },
+      { "name": "500g", "price": 1020 }
+    ],
+    "tags": ["ladoo", "methi", "traditional"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.6,
+    "ingredients": "Fenugreek, wheat flour, jaggery, ghee",
+    "shelfLife": "18 days",
+    "storageInstructions": "Store in an airtight container in a cool place.",
+    "vegetarian": true
+  },
+  {
+    "id": 21,
+    "name": "Nachni Ladoo",
+    "slug": "nachni-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Nutritious ragi ladoos with balanced sweetness.",
+    "description": "Soft and earthy Nachni Ladoo crafted from ragi flour, nuts, and ghee.",
+    "price": 520,
+    "originalPrice": 590,
+    "images": [
+      "/images/products/laddoos/Nachni Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 520 },
+      { "name": "500g", "price": 990 }
+    ],
+    "tags": ["ladoo", "nachni", "healthy"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.5,
+    "ingredients": "Ragi flour, jaggery, ghee, mixed nuts",
+    "shelfLife": "18 days",
+    "storageInstructions": "Keep tightly sealed and dry.",
+    "vegetarian": true
+  },
+  {
+    "id": 22,
+    "name": "Sev Ladoo",
+    "slug": "sev-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Crispy sev ladoos with a nostalgic festive crunch.",
+    "description": "A festive-style sweet made with thin sev, jaggery syrup, and aromatic ghee.",
+    "price": 500,
+    "originalPrice": 560,
+    "images": [
+      "/images/products/laddoos/Sev Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 500 },
+      { "name": "500g", "price": 950 }
+    ],
+    "tags": ["ladoo", "sev", "festive"],
+    "isFeatured": false,
+    "isBestseller": false,
+    "rating": 4.4,
+    "ingredients": "Sev, jaggery, ghee, cardamom",
+    "shelfLife": "14 days",
+    "storageInstructions": "Store in a dry airtight jar.",
+    "vegetarian": true
+  },
+  {
+    "id": 23,
+    "name": "Til Shengdana Ladoo",
+    "slug": "til-shengdana-ladoo",
+    "category": "Sweets",
+    "shortDescription": "Sesame-peanut ladoos with jaggery richness.",
+    "description": "Classic winter-special Til Shengdana Ladoo combining roasted sesame and peanuts.",
+    "price": 530,
+    "originalPrice": 600,
+    "images": [
+      "/images/products/laddoos/Til Shengdana Ladoo.jpg"
+    ],
+    "variants": [
+      { "name": "250g", "price": 530 },
+      { "name": "500g", "price": 1010 }
+    ],
+    "tags": ["ladoo", "til", "shengdana"],
+    "isFeatured": true,
+    "isBestseller": true,
+    "rating": 4.8,
+    "ingredients": "Sesame seeds, peanuts, jaggery, ghee",
+    "shelfLife": "20 days",
+    "storageInstructions": "Keep airtight in cool dry conditions.",
+    "vegetarian": true
+  }
+]

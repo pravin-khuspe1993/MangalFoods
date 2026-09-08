@@ -1,0 +1,49 @@
+@model MangalFoods.Models.Product
+@{
+    var discount = Model.OriginalPrice > Model.Price && Model.OriginalPrice > 0
+        ? (int)Math.Round((Model.OriginalPrice - Model.Price) / Model.OriginalPrice * 100)
+        : 0;
+    var primaryImage = Model.Images.FirstOrDefault() ?? "/images/products/placeholder-product.webp";
+}
+
+<article class="product-card h-100 reveal reveal-up" aria-label="@Model.Name">
+    <div class="product-image-wrap">
+        <img src="@primaryImage" alt="@Model.Name" class="img-fluid product-image" loading="lazy" />
+        @if (Model.Images.Count > 1)
+        {
+            <img src="@Model.Images[1]" alt="@Model.Name alternate view" class="img-fluid product-image-secondary" loading="lazy" />
+        }
+        @if (Model.IsBestseller)
+        {
+            <span class="badge text-bg-dark product-badge">Bestseller</span>
+        }
+        else if (Model.IsFeatured)
+        {
+            <span class="badge text-bg-secondary product-badge">New</span>
+        }
+    </div>
+    <div class="p-3 d-flex flex-column">
+        <h3 class="h6 mb-1">@Model.Name</h3>
+        <p class="small text-muted mb-2">@Model.ShortDescription</p>
+        <p class="mb-2 rating-text" aria-label="Rating @Model.Rating out of 5">★ @Model.Rating.ToString("0.0")</p>
+        <div class="mb-3">
+            <span class="fw-semibold">@string.Format(System.Globalization.CultureInfo.GetCultureInfo("en-IN"), "₹{0:N0}", Model.Price)</span>
+            @if (Model.OriginalPrice > Model.Price)
+            {
+                <span class="text-muted text-decoration-line-through ms-2">@string.Format(System.Globalization.CultureInfo.GetCultureInfo("en-IN"), "₹{0:N0}", Model.OriginalPrice)</span>
+                <span class="text-success ms-2">@discount% off</span>
+            }
+        </div>
+        <div class="mt-auto d-flex gap-2">
+            <button type="button"
+                    class="btn btn-dark btn-sm flex-grow-1 js-add-to-cart"
+                    data-product-id="@Model.Id"
+                    data-product-name="@Model.Name"
+                    data-product-price="@Model.Price"
+                    data-product-image="@primaryImage"
+                    data-product-slug="@Model.Slug"
+                    data-default-variant="@(Model.Variants.FirstOrDefault()?.Name ?? "Standard")">Add to Cart</button>
+            <a asp-page="/Product" asp-route-slug="@Model.Slug" class="btn btn-outline-dark btn-sm">View Details</a>
+        </div>
+    </div>
+</article>

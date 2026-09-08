@@ -1,0 +1,34 @@
+@page "/shop"
+@model MangalFoods.Pages.ShopModel
+@using System.Text.Json
+@{
+    ViewData["SearchActionPage"] = "/Shop";
+    ViewData["SearchValue"] = Model.Q;
+}
+
+<section class="py-4 py-lg-5" data-catalog-root data-catalog='@JsonSerializer.Serialize(Model.Products)'>
+    <div class="container-xl">
+        <header class="mb-4">
+            <h1 class="h2 mb-2">Shop All Products</h1>
+            <p class="text-muted mb-0">Browse premium sweets, savouries, festive and gifting collections.</p>
+        </header>
+
+        <div class="row g-4">
+            <aside class="col-lg-3">
+                <partial name="Partials/_ProductFilters" />
+            </aside>
+            <div class="col-lg-9">
+                <div class="mb-4">
+                    <partial name="Partials/_SearchBar" />
+                </div>
+                <div id="productGridRoot">
+                    <partial name="Partials/_ProductGrid" model="Model.Products" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/catalog.js" asp-append-version="true"></script>
+}

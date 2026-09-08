@@ -1,0 +1,20 @@
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+    <li class="nav-item"><a class="nav-link" asp-page="/Index">Home</a></li>
+    <li class="nav-item"><a class="nav-link" asp-page="/Sweets">Sweets</a></li>
+    <li class="nav-item"><a class="nav-link" asp-page="/Savouries">Savouries</a></li>
+    <li class="nav-item"><a class="nav-link" asp-page="/Gifting">Gifting</a></li>
+    <li class="nav-item"><a class="nav-link" asp-page="/About">About</a></li>
+    <li class="nav-item"><a class="nav-link" asp-page="/Contact">Contact</a></li>
+    <li class="nav-item d-none d-lg-block">
+        <form class="d-flex" method="get" asp-page="/Shop" role="search" aria-label="Search products">
+            <label class="visually-hidden" for="headerSearch">Search products</label>
+            <input id="headerSearch" name="q" class="form-control form-control-sm search-field" type="search" placeholder="Search" />
+        </form>
+    </li>
+    <li class="nav-item ms-lg-2">
+        <a class="nav-link position-relative" asp-page="/Cart" aria-label="View cart">
+            <i class="bi bi-bag"></i>
+            <span id="cartCountBadge" class="cart-count-badge">0</span>
+        </a>
+    </li>
+</ul>

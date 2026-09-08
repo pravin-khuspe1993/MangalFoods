@@ -1,0 +1,11 @@
+<aside class="offcanvas offcanvas-end" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title h5" id="cartDrawerLabel">Your Cart</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close cart"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div id="cartDrawerItems" class="mb-3" aria-live="polite"></div>
+        <partial name="Partials/_CartSummary" />
+        <a asp-page="/Checkout" class="btn btn-dark w-100 mt-3">Proceed to Checkout</a>
+    </div>
+</aside>

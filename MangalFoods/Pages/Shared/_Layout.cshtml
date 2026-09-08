@@ -1,0 +1,51 @@
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<SiteSettings> SiteSettingsOptions
+@{
+    var siteSettings = SiteSettingsOptions.Value;
+    var title = ViewData["Title"]?.ToString() ?? siteSettings.BusinessName;
+    var description = ViewData["Description"]?.ToString() ?? "Premium Indian sweets, savouries, and curated gifting hampers.";
+    var canonical = ViewData["CanonicalUrl"]?.ToString();
+    var request = Context.Request;
+    var pageUrl = canonical ?? $"{request.Scheme}://{request.Host}{request.Path}{request.QueryString}";
+    var image = ViewData["OgImage"]?.ToString() ?? "/images/brand/og-default.webp";
+    var absoluteImage = image.StartsWith("http", StringComparison.OrdinalIgnoreCase) ? image : $"{request.Scheme}://{request.Host}{image}";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@title | @siteSettings.BusinessName</title>
+    <meta name="description" content="@description" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@pageUrl" />
+    <meta property="og:image" content="@absoluteImage" />
+    @if (!string.IsNullOrWhiteSpace(canonical))
+    {
+        <link rel="canonical" href="@canonical" />
+    }
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MangalFoods.styles.css" asp-append-version="true" />
+</head>
+<body class="page-shell" data-page-path="@request.Path" data-delivery-charge="@siteSettings.DeliveryCharge" data-free-delivery-threshold="@siteSettings.FreeDeliveryThreshold" data-whatsapp-number="@siteSettings.WhatsAppNumber" data-business-name="@siteSettings.BusinessName" data-whatsapp-dry-run="@siteSettings.WhatsAppDryRun.ToString().ToLowerInvariant()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <partial name="Partials/_Header" model="siteSettings" />
+
+    <main id="main-content" role="main" class="main-content">
+        @RenderBody()
+    </main>
+
+    <partial name="Partials/_Footer" model="siteSettings" />
+    <partial name="Partials/_CartDrawer" />
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/cart.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

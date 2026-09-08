@@ -1,0 +1,7 @@
+@model (string InputId, int Value)
+
+<div class="quantity-selector" role="group" aria-label="Quantity selector">
+    <button type="button" class="btn btn-outline-dark btn-sm js-qty-decrease" data-target="@Model.InputId" aria-label="Decrease quantity">-</button>
+    <input id="@Model.InputId" type="number" min="1" value="@Model.Value" class="form-control form-control-sm text-center quantity-input" aria-label="Quantity" />
+    <button type="button" class="btn btn-outline-dark btn-sm js-qty-increase" data-target="@Model.InputId" aria-label="Increase quantity">+</button>
+</div>

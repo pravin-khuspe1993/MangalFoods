@@ -1,0 +1,14 @@
+@{
+    var actionPage = ViewData["SearchActionPage"]?.ToString() ?? "/Shop";
+    var inputName = ViewData["SearchInputName"]?.ToString() ?? "q";
+    var inputValue = ViewData["SearchValue"]?.ToString() ?? string.Empty;
+}
+
+<form method="get" asp-page="@actionPage" class="search-bar reveal reveal-up" role="search" aria-label="Product search">
+    <label for="pageSearch" class="visually-hidden">Search products</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input id="pageSearch" type="search" name="@inputName" value="@inputValue" class="form-control" placeholder="Search by name, category, or tag" />
+        <button class="btn btn-dark" type="submit">Search</button>
+    </div>
+</form>

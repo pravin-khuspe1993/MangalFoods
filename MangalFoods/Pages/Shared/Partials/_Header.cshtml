@@ -1,0 +1,29 @@
+@model MangalFoods.Configuration.SiteSettings
+
+<header class="site-header sticky-top" role="banner">
+    <nav class="navbar navbar-expand-lg" data-nav-shell>
+        <div class="container-fluid container-xl">
+            <button class="btn d-lg-none nav-icon-btn mobile-icon-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <a class="navbar-brand brand-mark" asp-page="/Index" aria-label="@Model.BusinessName home">
+                <span class="brand-title">@Model.BusinessName</span>
+            </a>
+
+            <div class="d-flex d-lg-none align-items-center gap-2 mobile-quick-actions">
+                <a asp-page="/Shop" class="nav-icon-btn mobile-icon-link" aria-label="Search products"><i class="bi bi-search"></i></a>
+                <a asp-page="/Cart" class="nav-icon-btn position-relative mobile-icon-link" aria-label="View cart">
+                    <i class="bi bi-bag"></i>
+                    <span id="cartCountBadgeMobile" class="cart-count-badge">0</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <partial name="Partials/_Navigation" />
+            </div>
+        </div>
+    </nav>
+
+    <partial name="Partials/_MobileNavigation" />
+</header>

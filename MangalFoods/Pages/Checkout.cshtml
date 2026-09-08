@@ -1,0 +1,109 @@
+@page "/checkout"
+@model MangalFoods.Pages.CheckoutModel
+@{
+    ViewData["WhatsAppButtonId"] = "placeOrderWhatsApp";
+    ViewData["WhatsAppButtonText"] = "Place Order on WhatsApp";
+}
+
+<section class="py-4 py-lg-5">
+    <div class="container-xl">
+        <h1 class="h2 mb-4">Checkout</h1>
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <form id="checkoutForm" method="post" novalidate autocomplete="on">
+                    <h2 class="h5 mb-3">Customer Details</h2>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="Input.FullName" class="form-label"></label>
+                            <input asp-for="Input.FullName" class="form-control" autocomplete="name" />
+                            <span asp-validation-for="Input.FullName" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Input.MobileNumber" class="form-label"></label>
+                            <input asp-for="Input.MobileNumber" class="form-control" autocomplete="tel" inputmode="numeric" />
+                            <span asp-validation-for="Input.MobileNumber" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Input.WhatsAppNumber" class="form-label"></label>
+                            <input asp-for="Input.WhatsAppNumber" class="form-control" autocomplete="tel" inputmode="numeric" />
+                            <span asp-validation-for="Input.WhatsAppNumber" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Input.Email" class="form-label"></label>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="email" />
+                            <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <h2 class="h5 mt-4 mb-3">Delivery Details</h2>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label asp-for="Input.Address" class="form-label"></label>
+                            <textarea asp-for="Input.Address" class="form-control" rows="3" autocomplete="street-address"></textarea>
+                            <span asp-validation-for="Input.Address" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Input.Landmark" class="form-label"></label>
+                            <input asp-for="Input.Landmark" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Input.City" class="form-label"></label>
+                            <input asp-for="Input.City" class="form-control" autocomplete="address-level2" />
+                            <span asp-validation-for="Input.City" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Input.State" class="form-label"></label>
+                            <input asp-for="Input.State" class="form-control" autocomplete="address-level1" />
+                            <span asp-validation-for="Input.State" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Input.PinCode" class="form-label"></label>
+                            <input asp-for="Input.PinCode" class="form-control" autocomplete="postal-code" inputmode="numeric" />
+                            <span asp-validation-for="Input.PinCode" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <h2 class="h5 mt-4 mb-3">Optional</h2>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label asp-for="Input.GiftMessage" class="form-label"></label>
+                            <textarea asp-for="Input.GiftMessage" class="form-control" rows="2"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Input.SpecialInstructions" class="form-label"></label>
+                            <textarea asp-for="Input.SpecialInstructions" class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+
+                    <div id="checkoutError" class="alert alert-danger mt-4 d-none" role="alert"></div>
+                    <div class="mt-3">
+                        <partial name="Partials/_WhatsAppOrderButton" />
+                    </div>
+
+                    <section id="whatsappDryRunPanel" class="dry-run-panel mt-4 d-none" aria-labelledby="dry-run-heading">
+                        <h2 id="dry-run-heading" class="h6 mb-2">WhatsApp Dry Run Preview</h2>
+                        <p class="small text-muted mb-2">Dry Run is enabled. No WhatsApp message will be sent. Review and copy the generated output below.</p>
+                        <div class="mb-3">
+                            <label for="dryRunWaUrl" class="form-label">Generated WhatsApp URL</label>
+                            <textarea id="dryRunWaUrl" class="form-control" rows="3" readonly></textarea>
+                        </div>
+                        <div>
+                            <label for="dryRunMessage" class="form-label">Generated Message</label>
+                            <textarea id="dryRunMessage" class="form-control" rows="12" readonly></textarea>
+                        </div>
+                    </section>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <h2 class="h5 mb-3">Order Summary</h2>
+                <div id="checkoutItems" class="d-grid gap-3 mb-3"></div>
+                <partial name="Partials/_CartSummary" />
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/checkout.js" asp-append-version="true"></script>
+}

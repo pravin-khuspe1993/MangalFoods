@@ -1,0 +1,42 @@
+<div class="mb-3">
+    <label for="filterCategory" class="form-label">Category</label>
+    <select id="filterCategory" class="form-select js-filter" data-filter="category">
+        <option value="">All Categories</option>
+        <option value="Sweets">Sweets</option>
+        <option value="Savouries">Savouries</option>
+        <option value="Gift Hampers">Gift Hampers</option>
+        <option value="Festive Collection">Festive Collection</option>
+        <option value="Corporate Gifting">Corporate Gifting</option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <label for="filterPrice" class="form-label">Max Price</label>
+    <input id="filterPrice" type="range" class="form-range js-filter" data-filter="price" min="100" max="5000" step="100" value="5000" />
+</div>
+
+<div class="form-check mb-2">
+    <input class="form-check-input js-filter" type="checkbox" id="filterBestseller" data-filter="bestseller" />
+    <label class="form-check-label" for="filterBestseller">Bestseller only</label>
+</div>
+
+<div class="form-check mb-2">
+    <input class="form-check-input js-filter" type="checkbox" id="filterFeatured" data-filter="featured" />
+    <label class="form-check-label" for="filterFeatured">Featured only</label>
+</div>
+
+<div class="form-check mb-3">
+    <input class="form-check-input js-filter" type="checkbox" id="filterVegetarian" data-filter="vegetarian" />
+    <label class="form-check-label" for="filterVegetarian">Vegetarian only</label>
+</div>
+
+<div class="mb-3">
+    <label for="sortBy" class="form-label">Sort by</label>
+    <select id="sortBy" class="form-select js-filter" data-filter="sort">
+        <option value="featured">Featured</option>
+        <option value="bestseller">Bestseller</option>
+        <option value="price-asc">Price low to high</option>
+        <option value="price-desc">Price high to low</option>
+        <option value="name-asc">Name A-Z</option>
+    </select>
+</div>
